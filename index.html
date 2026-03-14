@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Pack Completo Pérdida de Peso | Método Mujer Fit 28</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fucsia: #D6006E;
+            --fucsia-light: #FF008A;
+            --gold: #FFD700;
+            --gold-dark: #B8860B;
+            --emerald: #00FF88;
+            --dark-bg: #050103;
+            --card-glass: rgba(255, 255, 255, 0.05);
+            --text-white: #FFFFFF;
+            --max-width: 1100px;
+        }
+
+        /* Reset y Base */
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand { font-family: 'Montserrat', sans-serif; }
+
+        /* Efectos de Animación Iniciales */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Fondo Animado de Partículas Suaves */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(214, 0, 110, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 138, 0.1) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Top Bar Persuasiva */
+        .top-bar {
+            background: linear-gradient(90deg, #000, var(--fucsia), #000);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+        /* Hero Section de Alto Impacto */
+        .hero { padding: 60px 0 100px; text-align: center; overflow: hidden; }
+        
+        .main-title {
+            font-weight: 900;
+            font-size: clamp(2.2rem, 10vw, 5rem);
+            line-height: 0.9;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .highlight-gold {
+            background: linear-gradient(180deg, #FFF7AD 0%, #FFAA00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+        }
+
+        .sub-headline-pill {
+            display: inline-block;
+            background: var(--fucsia);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(214, 0, 110, 0.5);
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .product-display { position: relative; display: inline-block; margin-top: 20px; }
+        .product-display img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 20px;
+            filter: drop-shadow(0 20px 50px rgba(214, 0, 110, 0.4));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Cinta de Beneficios con Movimiento */
+        .benefits-strip {
+            background: rgba(255,255,255,0.02);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255,215,0,0.2);
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+            padding: 30px 0;
+            margin: 40px 0;
+        }
+        .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .benefit-item { 
+            display: flex; align-items: center; justify-content: center; gap: 8px; 
+            font-weight: 700; font-size: 0.8rem; color: var(--gold); text-transform: uppercase;
+        }
+
+        /* Testimonios: "Muro de Amor" */
+        .testimonials { padding: 80px 0; background: rgba(214, 0, 110, 0.03); }
+        .testimonial-grid { display: grid; grid-template-columns: 1fr; gap: 25px; margin-top: 40px; }
+        .testimonial-card {
+            background: var(--card-glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 25px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+        .testimonial-card:hover { border-color: var(--fucsia); transform: scale(1.02); }
+        .user-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .avatar { width: 45px; height: 45px; border-radius: 50%; background: var(--fucsia); display: flex; align-items: center; justify-content: center; font-weight: 900; }
+
+        /* BONOS REDISEÑADOS (Impacto Visual) */
+        .bonos-container { padding: 100px 0; }
+        .bono-card {
+            background: linear-gradient(145deg, #151515, #0a0a0a);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 35px;
+            padding: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .bono-tag {
+            position: absolute;
+            top: 20px; right: -40px;
+            background: var(--emerald);
+            color: #000;
+            padding: 8px 45px;
+            font-weight: 900;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+        }
+        .bono-content { text-align: center; }
+        .bono-img-wrapper { margin-bottom: 25px; position: relative; }
+        .bono-img { width: 100%; max-width: 280px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8)); }
+        
+        .bono-number { color: var(--emerald); font-weight: 900; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .bono-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 15px; color: #fff; line-height: 1.2; }
+        .bono-desc { color: #aaa; font-size: 1rem; }
+
+        /* Oferta Irresistible */
+        .offer-section { padding: 100px 0; text-align: center; }
+        .price-card {
+            background: #fff;
+            color: #000;
+            padding: 60px 40px;
+            border-radius: 40px;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 30px 100px rgba(214, 0, 110, 0.4);
+        }
+        .old-price { text-decoration: line-through; color: #888; font-size: 1.5rem; font-weight: 700; }
+        .new-price { font-size: 5rem; font-weight: 900; color: var(--fucsia); line-height: 1; margin: 10px 0; }
+        
+        .cta-button {
+            background: linear-gradient(180deg, #ff0084 0%, #d6006e 100%);
+            color: white;
+            padding: 25px 40px;
+            border-radius: 100px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-decoration: none;
+            display: block;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(214, 0, 110, 0.4);
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .cta-button:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 15px 40px rgba(214, 0, 110, 0.6); }
+
+        /* Animaciones Keyframes */
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* FAQ Estilizada */
+        .faq-box { margin-top: 50px; }
+        .faq-item { background: rgba(255,255,255,0.03); border-radius: 20px; margin-bottom: 15px; padding: 20px; cursor: pointer; border: 1px solid rgba(255,255,255,0.05); }
+
+        @media (min-width: 768px) {
+            .benefits-grid { grid-template-columns: repeat(4, 1fr); }
+            .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+            .bono-card { flex-direction: row; text-align: left; gap: 50px; padding: 60px; }
+            .bono-content { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="top-bar">
+        🔥 ÚLTIMAS HORAS: PRECIO CON 90% DE DESCUENTO — <span id="timer">01:59:59</span>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <span class="sub-headline-pill">✨ EL MÉTODO QUE ESTÁ REVOLUCIONANDO TODO</span>
+            <h1 class="main-title">
+                CONSIGUE TU MEJOR <br>
+                <span class="highlight-gold">CUERPO EN 28 DÍAS</span>
+            </h1>
+            <p class="hero-desc">Dile adiós a la flacidez y a la falta de energía. Un sistema probado para mujeres reales con poco tiempo.</p>
+            
+            <div class="product-display reveal">
+                <img src="https://i.postimg.cc/wjFnmC1t/IMG-8737-(2).jpg" alt="Transformación Pack">
+            </div>
+        </div>
+
+        <div class="benefits-strip">
+            <div class="container">
+                <div class="benefits-grid">
+                    <div class="benefit-item">💎 CALIDAD PREMIUM</div>
+                    <div class="benefit-item">📱 ACCESO MÓVIL</div>
+                    <div class="benefit-item">🚀 RESULTADOS RÁPIDOS</div>
+                    <div class="benefit-item">✅ GARANTÍA TOTAL</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; font-weight: 900;">HISTORIAS DE ÉXITO</h2>
+                <p style="color: #aaa;">Mujeres reales, resultados reales.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card reveal">
+                    <div class="user-header">
+                        <div class="avatar">M</div>
+                        <div><strong>Mariana R.</strong><br><small style="color: var(--emerald);">Compradora Verificada</small></div>
+                    </div>
+                    <p style="font-style: italic;">"Increíble. Al principio dudaba pero las recetas son súper fáciles de hacer y no pasé hambre. ¡Bajé 4 kilos en el primer mes de forma natural!"</p>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="user-header">
+                        <div class="avatar">L</div>
+                        <div><strong>Lucía V.</strong><br><small style="color: var(--emerald);">Compradora Verificada</small></div>
+                    </div>
+                    <p style="font-style: italic;">"Lo que más me gustó fue la guía de celulitis. Mi piel se ve mucho más firme y ya no me da vergüenza usar shorts. ¡Recomendadísimo!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bonos-container">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3rem; font-weight: 900; margin-bottom: 60px;">REGALOS <span style="color: var(--fucsia);">EXCLUSIVOS</span></h2>
+            
+            <!-- BONO 1 -->
+            <div class="bono-card reveal">
+                <div class="bono-tag">GRATIS</div>
+                <div class="bono-img-wrapper">
+                    <img src="https://i.postimg.cc/XJ2M6Tb0/726cbffe-min.png" alt="Recetas" class="bono-img">
+                </div>
+                <div class="bono-content">
+                    <span class="bono-number">BONO ESPECIAL #01</span>
+                    <h3 class="bono-title">75 Recetas Quemagrasa</h3>
+                    <p class="bono-desc">Aprende a cocinar platos deliciosos que activan tu metabolismo desde el primer bocado.</p>
+                </div>
+            </div>
+
+            <!-- BONO 2 -->
+            <div class="bono-card reveal">
+                <div class="bono-tag">GRATIS</div>
+                <div class="bono-img-wrapper">
+                    <img src="https://i.postimg.cc/G2gf5GF3/a5fcf2b3-min.png" alt="Celulitis" class="bono-img">
+                </div>
+                <div class="bono-content">
+                    <span class="bono-number">BONO ESPECIAL #02</span>
+                    <h3 class="bono-title">Plan Adiós Celulitis</h3>
+                    <p class="bono-desc">El protocolo exacto de nutrición y masajes para eliminar la piel de naranja de forma definitiva.</p>
+                </div>
+            </div>
+
+            <!-- BONO 3 -->
+            <div class="bono-card reveal">
+                <div class="bono-tag">GRATIS</div>
+                <div class="bono-img-wrapper">
+                    <img src="https://i.postimg.cc/d13Hr3bY/239154f2_min.png" alt="Plan Transformación" class="bono-img">
+                </div>
+                <div class="bono-content">
+                    <span class="bono-number">BONO ESPECIAL #03</span>
+                    <h3 class="bono-title">Plan de Transformación 28D</h3>
+                    <p class="bono-desc">Un calendario paso a paso para que sepas exactamente qué hacer cada día sin confusiones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offer-section">
+        <div class="container">
+            <div class="price-card reveal">
+                <p style="font-weight: 900; letter-spacing: 2px;">TODO ESTO POR SOLO:</p>
+                <div class="old-price">$97.00</div>
+                <div class="new-price">$10.00</div>
+                <p style="font-weight: 700; color: var(--emerald);">Ahorras más de $80 hoy mismo</p>
+                <a href="https://pay.hotmart.com/Y104908513R" class="cta-button">SÍ, QUIERO EMPEZAR AHORA</a>
+                <div style="margin-top: 20px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" width="60" style="margin: 0 10px; opacity: 0.5;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" width="50" style="margin: 0 10px; opacity: 0.5;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" width="40" style="margin: 0 10px; opacity: 0.5;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="padding-bottom: 100px;">
+        <div class="faq-box reveal">
+            <h2 style="text-align: center; margin-bottom: 30px;">PREGUNTAS FRECUENTES</h2>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <strong>¿Cuándo recibiré el acceso?</strong>
+                <p style="display:none; margin-top: 10px; color: #ccc;">Inmediatamente después del pago recibirás un email con todos tus archivos.</p>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <strong>¿Tengo garantía?</strong>
+                <p style="display:none; margin-top: 10px; color: #ccc;">Sí, tienes 7 días de garantía incondicional. Si no te gusta, te devolvemos el dinero.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; background: #000; font-size: 0.8rem; color: #444;">
+        <p>© 2024 Método Mujer Fit 28. Transformando vidas paso a paso.</p>
+    </footer>
+
+    <script>
+        // Animación de aparición al hacer scroll (Reveal)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+
+        // Timer de Urgencia
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                display.textContent = "01:" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+                if (--timer < 0) timer = 0;
+            }, 1000);
+        }
+
+        function toggleFaq(el) {
+            const p = el.querySelector('p');
+            p.style.display = p.style.display === 'none' ? 'block' : 'none';
+        }
+
+        window.onload = function() {
+            reveal();
+            startTimer(7199, document.querySelector('#timer'));
+        };
+    </script>
+</body>
+</html>
